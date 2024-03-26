@@ -1,0 +1,12 @@
+启动MYSQL容器
+sudo docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=hx19870527 -p 3306:3306 -d mysql:latest
+进入DOCKER容器
+sudo docker exec -it mysql-container mysql -uroot -p
+进入 MYSQL库
+use mysql
+为root账号授权
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+刷新权限
+FLUSH PRIVILEGES;
+创建库
+create database test;
